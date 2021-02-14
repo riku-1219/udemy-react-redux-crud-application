@@ -1,7 +1,7 @@
 import _ from "lodash";
 import { READ_EVENTS } from "../actions";
 
-const feachData = (events = {}, action) => {
+export default (events = {}, action) => {
   switch (action.type) {
     case READ_EVENTS:
       return _.mapKeys(action.response.data, "id");
@@ -9,5 +9,3 @@ const feachData = (events = {}, action) => {
       return events;
   }
 };
-
-export default feachData;
